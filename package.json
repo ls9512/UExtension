@@ -1,0 +1,22 @@
+{
+  "name": "com.ls9512.uextension",
+  "displayName": "UExtension",
+  "description": "UExtension is a basic type extension library for .Net and Unity projects. It integrates a large number of commonly used, efficient and convenient extension methods, which helps to greatly improve development efficiency.",
+  "version": "1.0.6",
+  "unity": "2019.4",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ls9512/UExtension.git"
+  },
+  "author": {
+    "name": "ls9512",
+    "email": "ls9512@vip.qq.com",
+    "url": "https://github.com/ls9512"
+  },
+  "dependencies": {},
+  "keywords": [
+    "Frameworks",
+    "Testing",
+  ]
+}
