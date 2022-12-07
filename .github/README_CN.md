@@ -1,4 +1,4 @@
-﻿# UExtension
+# UExtension
 
 **UExtension** 是一个用于 .Net 和 Unity 项目的基础类型扩展函数库，集成大量常用、高效、便捷的扩展方法，有助于大幅度提高开发效率。
 
@@ -47,6 +47,7 @@
 ***
 
 ##  3. <a name='-1'></a>文件
+<!-- File Tree Generator auto create start -->&nbsp;&nbsp;
 └─&nbsp;Extension&nbsp;&nbsp;
 &nbsp;&nbsp;├─&nbsp;CSharp&nbsp;&nbsp;
 &nbsp;&nbsp;│&nbsp;&nbsp;└─&nbsp;Script&nbsp;&nbsp;
@@ -155,7 +156,8 @@
 &nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─&nbsp;[RectTransformExtension.cs](https://github.com/ls9512/UExtension/blob/master/Unity/Runtime/Script/UI/RectTransformExtension.cs)&nbsp;&nbsp;
 &nbsp;&nbsp;├─&nbsp;[.git](https://github.com/ls9512/UExtension/blob/master/.git)&nbsp;&nbsp;
 &nbsp;&nbsp;└─&nbsp;[package.json](https://github.com/ls9512/UExtension/blob/master/package.json)&nbsp;&nbsp;
-
+&nbsp;&nbsp;
+<!-- File Tree Generator auto create end -->
 
 ***
 
