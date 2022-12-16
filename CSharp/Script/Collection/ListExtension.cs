@@ -1,19 +1,9 @@
-﻿/////////////////////////////////////////////////////////////////////////////
-//
-//  Script   : ListExtension.cs
-//  Info     : List 扩展方法
-//  Author   : ls9512
-//  E-mail   : ls9512@vip.qq.com
-//
-//  Copyright : Aya Game Studio 2020
-//
-/////////////////////////////////////////////////////////////////////////////
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Aya.Extension
 {
-    public static class ListExtension
+    public static partial class ListExtension
     {
         internal static Random Rand = new Random();
 

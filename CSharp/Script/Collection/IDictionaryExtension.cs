@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Aya.Extension
 {
-    public static class IDictionaryExtension
+    public static partial class IDictionaryExtension
     {
         internal static Random Rand = new Random();
 

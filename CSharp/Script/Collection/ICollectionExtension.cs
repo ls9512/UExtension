@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Aya.Extension
 {
-    public static class ICollectionExtension
+    public static partial class ICollectionExtension
     {
         #region Null / Empty
 
