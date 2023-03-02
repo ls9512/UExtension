@@ -204,6 +204,22 @@ namespace Aya.Extension
             return array;
         }
 
+        public static T[] Sort<T>(this T[] array, int index, int length, IComparer<T> comparer)
+        {
+            if (comparer == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (array.Length == 0)
+            {
+                return array;
+            }
+
+            Array.Sort(array, index, length, comparer);
+            return array;
+        }
+
         public static T[] RandSort<T>(this T[] array)
         {
             var count = array.Length * 3;
@@ -233,6 +249,12 @@ namespace Aya.Extension
             return array;
         }
 
+        public static T[] SortAsc<T>(this T[] array, int index, int length, params Func<T, IComparable>[] keyGetters)
+        {
+            array.Sort(index, length, ComparerUtil.GetAscComparer(keyGetters));
+            return array;
+        }
+
         public static T[] SortDesc<T>(this T[] array) where T : IComparable
         {
             array.SortDesc(i => i);
@@ -245,9 +267,21 @@ namespace Aya.Extension
             return array;
         }
 
+        public static T[] SortDesc<T>(this T[] array, int index, int length, params Func<T, IComparable>[] keyGetters)
+        {
+            array.Sort(index, length, ComparerUtil.GetDescComparer(keyGetters));
+            return array;
+        }
+
         public static T[] Sort<T>(this T[] array, params Func<T, (IComparable, SortMode)>[] keyGetters)
         {
             array.Sort(ComparisonUtil.GetCustomComparison(keyGetters));
+            return array;
+        }
+
+        public static T[] Sort<T>(this T[] array, int index, int length, params Func<T, (IComparable, SortMode)>[] keyGetters)
+        {
+            array.Sort(index, length, ComparerUtil.GetCustomComparer(keyGetters));
             return array;
         }
 
