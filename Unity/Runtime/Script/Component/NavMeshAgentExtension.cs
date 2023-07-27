@@ -6,7 +6,7 @@ namespace Aya.Extension
     {
         public static bool IsArrive(this NavMeshAgent agent)
         {
-            if (!agent.enabled) return false;
+            if (!agent.isActiveAndEnabled || !agent.isOnNavMesh) return false;
             return !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance;
         }
     }

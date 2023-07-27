@@ -211,7 +211,7 @@ namespace Aya.Extension
                 weightCount += weightGetter(list[i]);
             }
 
-            var rand = Rand.Next(0, weightCount);
+            var rand = Rand.Next(0, weightCount + 1);
             weightCount = 0;
             var index = -1;
             do
@@ -225,6 +225,42 @@ namespace Aya.Extension
         }
 
         public static List<T> Random<T>(this IList<T> list, Func<T, int> weightGetter, int count)
+        {
+            var listCount = list.Count;
+            var result = new List<T>();
+            do
+            {
+                var item = list.Random(weightGetter);
+                if (result.Contains(item)) continue;
+                result.Add(item);
+            } while (result.Count < count && result.Count < listCount);
+
+            return result;
+        }
+
+
+        public static T Random<T>(this IList<T> list, Func<T, float> weightGetter)
+        {
+            var weightCount = 0f;
+            for (var i = 0; i < list.Count; i++)
+            {
+                weightCount += weightGetter(list[i]);
+            }
+
+            var rand = (float)Rand.NextDouble() * weightCount;
+            weightCount = 0;
+            var index = -1;
+            do
+            {
+                weightCount += weightGetter(list[index + 1]);
+                index++;
+            } while (weightCount < rand);
+
+            var result = list[index];
+            return result;
+        }
+
+        public static List<T> Random<T>(this IList<T> list, Func<T, float> weightGetter, int count)
         {
             var listCount = list.Count;
             var result = new List<T>();
