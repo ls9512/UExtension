@@ -323,6 +323,23 @@ namespace Aya.Extension
 
         #endregion
 
+        #region Next When Fixed Update
+
+        public static Coroutine ExecuteWhenFixedUpdate(this MonoBehaviour monoBehaviour, Action action)
+        {
+            return monoBehaviour.StartCoroutine(ExecuteWhenFixedUpdateCoroutine(action));
+        }
+
+        private static readonly WaitForFixedUpdate WaitForFixedUpdate = new WaitForFixedUpdate();
+
+        private static IEnumerator ExecuteWhenFixedUpdateCoroutine(Action action)
+        {
+            yield return WaitForFixedUpdate;
+            action();
+        }
+
+        #endregion
+
         #region Restart
 
         public static Coroutine RestartCoroutine(this MonoBehaviour monoBehaviour, string methodName)
