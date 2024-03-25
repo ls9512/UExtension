@@ -163,6 +163,7 @@ namespace Aya.Extension
 
         public static T Random<T>(this IList<T> list, Predicate<T> predicate)
         {
+            if (list == null || list.Count == 0) return default;
             var indexes = new List<int>();
             var count = list.Count;
             for (var i = 0; i < count; i++)
@@ -181,6 +182,7 @@ namespace Aya.Extension
 
         public static List<T> Random<T>(this IList<T> list, int count, bool allowRepeat = false)
         {
+            if (list == null || list.Count == 0) return default;
             var result = new List<T>();
             var listCount = list.Count;
             if (count > listCount)
@@ -205,6 +207,7 @@ namespace Aya.Extension
 
         public static T Random<T>(this IList<T> list, Func<T, int> weightGetter)
         {
+            if (list == null || list.Count == 0) return default;
             var weightCount = 0;
             for (var i = 0; i < list.Count; i++)
             {
@@ -226,6 +229,7 @@ namespace Aya.Extension
 
         public static List<T> Random<T>(this IList<T> list, Func<T, int> weightGetter, int count)
         {
+            if (list == null || list.Count == 0) return default;
             var listCount = list.Count;
             var result = new List<T>();
             do
@@ -241,6 +245,7 @@ namespace Aya.Extension
 
         public static T Random<T>(this IList<T> list, Func<T, float> weightGetter)
         {
+            if (list == null || list.Count == 0) return default;
             var weightCount = 0f;
             for (var i = 0; i < list.Count; i++)
             {
@@ -262,6 +267,7 @@ namespace Aya.Extension
 
         public static List<T> Random<T>(this IList<T> list, Func<T, float> weightGetter, int count)
         {
+            if (list == null || list.Count == 0) return default;
             var listCount = list.Count;
             var result = new List<T>();
             do
